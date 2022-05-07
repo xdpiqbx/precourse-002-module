@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/precourse-002-module.iml" filepath="$PROJECT_DIR$/precourse-002-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/precourse.iml" filepath="$PROJECT_DIR$/precourse.iml" />
     </modules>
   </component>
 </project>
