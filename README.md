@@ -1,1 +1,1 @@
-# precourse-002-module
+# precourse-java-goit
