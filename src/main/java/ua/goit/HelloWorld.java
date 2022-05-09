@@ -1,4 +1,4 @@
-package main.java;
+package ua.goit;
 
 public class HelloWorld {
     public static void main(String[] args) {
