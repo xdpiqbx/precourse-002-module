@@ -1,1 +1,3 @@
-[Start from](https://youtu.be/kH0opbVhSZc?t=410)
+DRY - don't repeat yourself
+
+KISS - keep it siomple stupid

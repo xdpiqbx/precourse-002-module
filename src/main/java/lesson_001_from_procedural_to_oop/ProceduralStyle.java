@@ -53,7 +53,7 @@ public class ProceduralStyle {
         }
     }
 
-    private static int binarySearch(int[] array, int elementToSerch){
+    private static int binrySearch(int[] array, int elementToSerch){
         int iLowerArrIndex = 0;
         int iHighArrIndex = array.length;
 
