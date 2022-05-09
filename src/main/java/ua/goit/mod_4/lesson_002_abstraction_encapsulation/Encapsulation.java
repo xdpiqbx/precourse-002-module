@@ -1,4 +1,4 @@
-package main.java.lesson_002_abstraction_encapsulation;
+package ua.goit.mod_4.lesson_002_abstraction_encapsulation;
 
 public class Encapsulation {
     public int findIntElement(int[] array, int elementToSerch){

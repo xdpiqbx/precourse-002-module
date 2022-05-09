@@ -1,4 +1,4 @@
-package main.java.lesson_004_polymorphism;
+package ua.goit.mod_4.lesson_004_polymorphism;
 
 public class Database {
     public void connection(){

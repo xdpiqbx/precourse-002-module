@@ -1,4 +1,4 @@
-package main.java.lesson_001_from_procedural_to_oop.OOP;
+package ua.goit.mod_4.lesson_001_from_procedural_to_oop.OOP;
 
 public class SearchUtil {
     public int findIntElement(int[] array, int elementToSerch){

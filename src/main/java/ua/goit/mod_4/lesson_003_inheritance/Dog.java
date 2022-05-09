@@ -1,4 +1,4 @@
-package main.java.lesson_003_inheritance;
+package ua.goit.mod_4.lesson_003_inheritance;
 
 public class Dog extends Animal{
 

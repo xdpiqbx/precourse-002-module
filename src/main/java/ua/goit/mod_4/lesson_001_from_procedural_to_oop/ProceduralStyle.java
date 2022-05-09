@@ -1,4 +1,4 @@
-package main.java.lesson_001_from_procedural_to_oop;
+package ua.goit.mod_4.lesson_001_from_procedural_to_oop;
 
 public class ProceduralStyle {
     public static void main(String[] args) {
