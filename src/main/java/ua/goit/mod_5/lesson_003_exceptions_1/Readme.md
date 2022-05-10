@@ -1,3 +1,3 @@
 Exception hierarchy java
 
-[start from](https://youtu.be/8Yl7cgYxLOU?t=614)
+[List of Java Exceptions](https://programming.guide/java/list-of-java-exceptions.html)

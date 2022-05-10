@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 
-public class ExceptionLecture {
+public class ExceptionLecture_001 {
     public static void main(String[] args) {
 //        try{
 //            fileNotFound("fileName");
@@ -26,4 +26,9 @@ public class ExceptionLecture {
         }
         throw new FileNotFoundException("File with name: " + fileName + " not found");
     }
+    private static void runtimeSomethingHappen() {
+            throw new RuntimeException("Runtime problem");
+    }
+
+
 }
