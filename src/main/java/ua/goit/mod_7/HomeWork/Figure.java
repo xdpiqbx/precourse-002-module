@@ -1,16 +1,12 @@
 package ua.goit.mod_7.HomeWork;
 
 public class Figure implements Shape {
-    private Shape figureTitle;
+    private Shape figure;
     public Figure(Shape figure){
-        this.figureTitle = figure;
+        this.figure = figure;
     }
-    public void printFigureTitle(){
-        System.out.println(this.figureTitle);
-    }
-
     @Override
     public String getFigureTitle() {
-        return this.figureTitle.getFigureTitle();
+        return this.figure.getFigureTitle();
     }
 }
