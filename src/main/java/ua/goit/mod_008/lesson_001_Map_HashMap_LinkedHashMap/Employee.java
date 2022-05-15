@@ -2,7 +2,7 @@ package ua.goit.mod_008.lesson_001_Map_HashMap_LinkedHashMap;
 
 import java.util.Objects;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
     private final int id;
     private final String name;
 
@@ -10,7 +10,15 @@ public class Employee {
         this.id = id;
         this.name = name;
     }
-
+    @Override
+    public int compareTo(Employee o) {
+        if (this.id < o.id){
+            return -1;
+        } else if (this.id > o.id) {
+            return 1;
+        }
+        return 0;
+    }
     public int getId() {
         return id;
     }
