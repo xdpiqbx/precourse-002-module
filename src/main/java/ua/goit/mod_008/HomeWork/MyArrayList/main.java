@@ -1,7 +1,4 @@
-package ua.goit.mod_008.HomeWork;
-
-import java.util.ArrayList;
-import java.util.List;
+package ua.goit.mod_008.HomeWork.MyArrayList;
 
 /*
 - `add(Object value)` добавляет элемент в конец
@@ -13,19 +10,18 @@ import java.util.List;
 
 public class main {
     public static void main(String[] args) {
-//        ArrayList<String> names = new ArrayList<>();
-//        names.add("Bill");
-//        names.add("John");
-//        System.out.println(names.remove(0));
-//        System.out.println(names.size());
-//        System.out.println(names.get(0));
-//        names.clear();
-
         MyArrayList<String> nums = new MyArrayList<>();
-        nums.add("dfvfdv");
-        nums.add("aaaaa");
-        nums.add("ddddd");
-        nums.add("bbbb");
-        nums.add("errergereerg");
+        nums.add("zero");
+        nums.add("one");
+        nums.add("two");
+        nums.add("three");
+        nums.add("four");
+
+        System.out.println(nums.remove(2));
+        System.out.println(nums.size());
+        System.out.println(nums.get(2));
+        System.out.println(nums);
+        nums.clear();
+        System.out.println(nums);
     }
 }
