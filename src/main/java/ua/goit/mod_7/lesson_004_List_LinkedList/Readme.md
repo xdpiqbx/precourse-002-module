@@ -4,4 +4,6 @@
 
 ![Cpp example](https://media.geeksforgeeks.org/wp-content/cdn-uploads/RGIF2.gif)
 
-[Reverse a linked list](https://www.geeksforgeeks.org/reverse-a-linked-list/)
+[Reverse a linked list 001](https://www.geeksforgeeks.org/reverse-a-linked-list/)
+
+[Java implementation of doubly linked list 002](https://russianblogs.com/article/8409160872/)
