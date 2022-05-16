@@ -1,24 +1,19 @@
 package ua.goit.mod_008.HomeWork.MyLinkedList;
-
-import java.util.LinkedList;
-
 public class MyLinkedList<T> {
     private Node<T> first;
     private Node<T> last;
     private Node<T> current;
 
-    public void add(T data){
-        Node<T> newNode = new Node<T>(data);
-        if (this.first == null){
+    public boolean add(T data){
+        Node<T> temp = this.last;
+        Node<T> newNode = new Node(temp, null, data);
+        this.last = newNode;
+        if(first == null){
             this.first = newNode;
         }else{
-            current = this.first;
-            while(current.next != null){
-                current.prev = current;
-                current = current.next;
-            }
-            last = current.next = newNode;
+            temp.next = newNode;
         }
+        return true;
     }
 
     public void output() {
@@ -43,34 +38,10 @@ public class MyLinkedList<T> {
         Node<T> next;
         Node<T> prev;
 
-        Node(T data) {
+        Node(Node<T>prev, Node<T>next, T data) {
+            this.prev = prev;
             this.data = data;
+            this.next = next;
         }
     }
 }
-
-/*
-     private void linkFirst(E e) {
-        final Node<E> f = first;
-        final Node<E> newNode = new Node<>(null, e, f);
-        first = newNode;
-        if (f == null)
-            last = newNode;
-        else
-            f.prev = newNode;
-        size++;
-        modCount++;
-    }
-
-    void linkLast(E e) {
-        final LinkedList.Node<E> l = last;
-        final LinkedList.Node<E> newNode = new LinkedList.Node<>(l, e, null);
-        last = newNode;
-        if (l == null)
-            first = newNode;
-        else
-            l.next = newNode;
-        size++;
-        modCount++;
-    }
-*/
