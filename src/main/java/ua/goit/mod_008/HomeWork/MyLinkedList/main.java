@@ -38,5 +38,6 @@ public class main {
         myList.add("first MY 003");
         myList.add("first MY 004");
         myList.output();
+        myList.outputReverse();
     }
 }
