@@ -1,56 +1,40 @@
 package ua.goit.mod_008.HomeWork.MyLinkedList;
 
 public class MyLinkedList<T> {
-    private Node listHeader; // *********************************************
+    private Node listHead; // *********************************************
+    private Node listTail; // *********************************************
     public void add(T data){
         Node<T> newNode = new Node<T>(data);
-        if(this.listHeader == null){
-            this.listHeader = newNode;
+        if(this.listHead == null){
+            this.listHead.nextNode = newNode.prevNode;
+            this.listTail.prevNode = newNode.nextNode;
         }else{
-            Node<T> currentNode = this.listHeader;
-            while(currentNode.getNextNode() != null){
-                currentNode = currentNode.getNextNode();
+            Node<T> currentNode = this.listHead;
+            while(currentNode.nextNode != null){
+                currentNode = currentNode.nextNode;
             }
-            currentNode.setNextNode(newNode);
+            currentNode.nextNode = newNode.prevNode;
+            this.listTail.prevNode = newNode.nextNode;
         }
     }
 
     public void output() {
-        if(this.listHeader != null){
-            Node<T> currentNode = this.listHeader;
-            while(currentNode.getNextNode() != null){
-                System.out.println(currentNode.getData());
-                currentNode = currentNode.getNextNode();
+        if(this.listHead != null){
+            Node<T> currentNode = this.listHead;
+            while(currentNode.nextNode != null){
+                System.out.println(currentNode.data);
+                currentNode = currentNode.nextNode;
             }
-            System.out.println(currentNode.getData());
+            System.out.println(currentNode.data);
         }
     }
 
     public static class Node<T> {
-        private T data;
-        private Node<T> nextNode;
-        private Node<T> prevNode;
+        public T data;
+        public Node<T> nextNode;
+        public Node<T> prevNode;
         public Node(T data){
             this.data = data;
         }
-        public T getData() {
-            return this.data;
-        }
-        public void setData(T data) {
-            this.data = data;
-        }
-        public Node<T> getNextNode() {
-            return this.nextNode;
-        }
-        public void setNextNode(Node<T> nextNode) {
-            this.nextNode = nextNode;
-        }
-        public Node<T> getPrevNode() {
-            return this.prevNode;
-        }
-        public void setPrevNode(Node<T> nextNode) {
-            this.prevNode = prevNode;
-        }
     }
-
 }
