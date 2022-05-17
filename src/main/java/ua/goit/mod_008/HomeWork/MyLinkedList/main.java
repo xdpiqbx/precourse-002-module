@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 /*
     - +++`add(Object value)` добавляет элемент в конец
-    - `remove(int index)` удаляет элемент под индексом (і повертає його)
+    - +++`remove(int index)` удаляет элемент под индексом (і повертає його)
     - `clear()` очищает коллекцию
     - +++`size()` возвращает размер коллекции
     - +++`get(int index)` возвращает элемент под индексом
@@ -44,7 +44,9 @@ public class main {
         myList.output();
         System.out.println("================");
         System.out.println("size() " + myList.size());
-        System.out.println("get(1) " + myList.get(1));
-//        System.out.println("remove " + myList.remove(1));
+        System.out.println("get(1) " + myList.get(6));
+        System.out.println("=== Remove output ===");
+        System.out.println("removed " + myList.remove(3));
+        myList.output();
     }
 }

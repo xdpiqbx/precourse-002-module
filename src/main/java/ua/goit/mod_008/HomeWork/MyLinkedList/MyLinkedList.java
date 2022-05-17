@@ -13,7 +13,6 @@ public class MyLinkedList<T> {
         }else{
             tempLastNode.next = newNode;
             listIndex++;
-            System.out.println(newNode.hasNext());
         }
         return true;
     }
@@ -23,21 +22,24 @@ public class MyLinkedList<T> {
     public T get(int index) {
         return this.findNodeByIndex(index).data;
     }
-//    public T remove(int index){
-//        Node<T> current = this.findNodeByIndex(index);
-//        Node<T> tempPrev = null;
-//        Node<T> tempNext = null;
-//        if(current.next != null){
-//            tempNext = current.next;
-//        }
-//        if(current.prev != null) {
-//            tempPrev = current.prev;
-//        }
-//        tempNext.prev = tempPrev;
-//        tempPrev.next = tempPrev;
-//        return current.data;
-//    }
-    private Node<T> findNodeByIndex(int index) {
+    public T remove(int index){
+        Node<T> current = this.findNodeByIndex(index);
+        T data = current.data;
+        Node<T> tempPrev = current.prev != null ? current.prev : null;
+        Node<T> tempNext = current.next != null ? current.next : null;
+        if(tempPrev != null){
+            tempPrev.next = tempNext;
+        }
+        if(tempNext != null){
+            tempNext.prev = tempPrev;
+        }
+        current = null;
+        return data;
+    }
+    private Node<T> findNodeByIndex(int index) throws IndexOutOfBoundsException {
+        if(index < 0 || index >= this.size()){
+            throw new IndexOutOfBoundsException();
+        }
         Node<T> current = first;
         int tempIndex = 0;
         while(current.hasNext()){
