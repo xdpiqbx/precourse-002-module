@@ -43,7 +43,8 @@ public class main {
         myList.add("first MY 007");
         myList.output();
         System.out.println("================");
-        System.out.println(myList.size());
-        System.out.println(myList.get(4));
+        System.out.println("size() " + myList.size());
+        System.out.println("get(1) " + myList.get(1));
+//        System.out.println("remove " + myList.remove(1));
     }
 }

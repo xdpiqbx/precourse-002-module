@@ -21,6 +21,23 @@ public class MyLinkedList<T> {
         return this.listIndex + 1;
     }
     public T get(int index) {
+        return this.findNodeByIndex(index).data;
+    }
+//    public T remove(int index){
+//        Node<T> current = this.findNodeByIndex(index);
+//        Node<T> tempPrev = null;
+//        Node<T> tempNext = null;
+//        if(current.next != null){
+//            tempNext = current.next;
+//        }
+//        if(current.prev != null) {
+//            tempPrev = current.prev;
+//        }
+//        tempNext.prev = tempPrev;
+//        tempPrev.next = tempPrev;
+//        return current.data;
+//    }
+    private Node<T> findNodeByIndex(int index) {
         Node<T> current = first;
         int tempIndex = 0;
         while(current.hasNext()){
@@ -30,7 +47,7 @@ public class MyLinkedList<T> {
             current = current.next;
             tempIndex++;
         }
-        return current.data;
+        return current;
     }
     public void output() {
         Node<T> current = first;
