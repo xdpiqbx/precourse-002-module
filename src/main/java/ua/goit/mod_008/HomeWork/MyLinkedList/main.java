@@ -1,13 +1,14 @@
 package ua.goit.mod_008.HomeWork.MyLinkedList;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /*
-    - `add(Object value)` добавляет элемент в конец
+    - +++`add(Object value)` добавляет элемент в конец
     - `remove(int index)` удаляет элемент под индексом (і повертає його)
     - `clear()` очищает коллекцию
-    - `size()` возвращает размер коллекции
-    - `get(int index)` возвращает элемент под индексом
+    - +++`size()` возвращает размер коллекции
+    - +++`get(int index)` возвращает элемент под индексом
 */
 
 public class main {
@@ -42,7 +43,7 @@ public class main {
         myList.add("first MY 007");
         myList.output();
         System.out.println("================");
-        myList.outputReverse();
-
+        System.out.println(myList.size());
+        System.out.println(myList.get(4));
     }
 }
