@@ -1,4 +1,11 @@
 package ua.goit.mod_008.HomeWork.MyLinkedList;
+/*
+    - `add(Object value)` добавляет элемент в конец
+    - `remove(int index)` удаляет элемент под индексом (і повертає його)
+    - `clear()` очищает коллекцию
+    - `size()` возвращает размер коллекции
+    - `get(int index)` возвращает элемент под индексом
+*/
 public class MyLinkedList<T> {
     private Node<T> first;
     private Node<T> last;
@@ -12,14 +19,8 @@ public class MyLinkedList<T> {
         }else{
             tempLastNode.next = newNode;
         }
-        listSize++;
+        this.listSize++;
         return true;
-    }
-    public int size(){
-        return this.listSize;
-    }
-    public T get(int index) {
-        return this.findNodeByIndex(index).data;
     }
     public T remove(int index){
         Node<T> current = this.findNodeByIndex(index);
@@ -47,13 +48,18 @@ public class MyLinkedList<T> {
         }
         this.first = this.last = null;
         this.listSize = 0;
-        System.out.println("The list is clear!");
+    }
+    public int size(){
+        return this.listSize;
+    }
+    public T get(int index) {
+        return this.findNodeByIndex(index).data;
     }
     private Node<T> findNodeByIndex(int index) throws IndexOutOfBoundsException {
         if(index < 0 || index >= this.size()){
             throw new IndexOutOfBoundsException();
         }
-        Node<T> current = first;
+        Node<T> current = this.first;
         int tempIndex = 0;
         while(current.hasNext()){
             if(index == tempIndex){

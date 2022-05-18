@@ -1,56 +1,33 @@
 package ua.goit.mod_008.HomeWork.MyLinkedList;
 
-import java.util.Iterator;
 import java.util.LinkedList;
-
-/*
-    - +++`add(Object value)` добавляет элемент в конец
-    - +++`remove(int index)` удаляет элемент под индексом (і повертає його)
-    - `clear()` очищает коллекцию
-    - +++`size()` возвращает размер коллекции
-    - +++`get(int index)` возвращает элемент под индексом
-*/
 
 public class main {
     public static void main(String[] args) {
-        LinkedList<String> list = new LinkedList<>();
-        System.out.println(list);
-        list.add("first");
-        list.add("second");
-        System.out.println(
-            list.add("third") // **** METHOD behaviour - added and return true
-        );
-        list.add("fourth");
-        System.out.println(list);
-        System.out.println(
-            list.remove(0) // **** METHOD behaviour - remove and return
-        );
-        System.out.println(list);
-        System.out.println(list.size());// **** METHOD behaviour
-        System.out.println(list.get(0));// **** METHOD behaviour
-        list.clear();// **** METHOD behaviour
-        System.out.println(list);
-
         System.out.println("=== MyLinkedList ===");
 
         MyLinkedList<String> myList = new MyLinkedList<>();
-        myList.add("first MY 001");
-        myList.add("first MY 002");
-        myList.add("first MY 003");
-        myList.add("first MY 004");
-        myList.add("first MY 005");
-        myList.add("first MY 006");
-        myList.add("first MY 007");
+        myList.add("MY 001");
+        myList.add("MY 002");
+        myList.add("MY 003");
+        myList.add("MY 004");
+        myList.add("MY 005");
+        myList.add("MY 006");
+        myList.add("MY 007");
         myList.output();
-        System.out.println("================");
+
+        System.out.println("\r\nsize() " + myList.size());
+        System.out.println("get(6) => " + myList.get(6));
+
+        System.out.println("\r\n=== Remove output ===");
+        System.out.println("removed by index 3 => " + myList.remove(3));
         System.out.println("size() " + myList.size());
-        System.out.println("get() " + myList.get(6));
-        System.out.println("=== Remove output ===");
-        System.out.println("removed " + myList.remove(3));
         myList.output();
+
+        System.out.println("\r\n=== Output Reverse ===");
         myList.outputReverse();
         myList.clear();
-        System.out.println("=======&&&=======");
+        System.out.println("\r\n=== After clear ===");
         myList.output();
     }
 }
