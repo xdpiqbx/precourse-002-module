@@ -48,5 +48,8 @@ public class main {
         System.out.println("=== Remove output ===");
         System.out.println("removed " + myList.remove(3));
         myList.output();
+        myList.clear();
+        System.out.println("=======&&&=======");
+        myList.output();
     }
 }

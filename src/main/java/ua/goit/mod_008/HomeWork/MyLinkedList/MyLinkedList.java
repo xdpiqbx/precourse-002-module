@@ -36,6 +36,19 @@ public class MyLinkedList<T> {
         current = null;
         return data;
     }
+    public void clear(){
+        Node<T> current = this.first;
+        while (current != null){
+            Node<T> next = current.next;
+            current.data = null;
+            current.prev = null;
+            current.next = null;
+            current = next;
+        }
+        this.first = this.last = null;
+        this.listIndex = 0;
+        System.out.println("The list is clear!");
+    }
     private Node<T> findNodeByIndex(int index) throws IndexOutOfBoundsException {
         if(index < 0 || index >= this.size()){
             throw new IndexOutOfBoundsException();
