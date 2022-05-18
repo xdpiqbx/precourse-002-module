@@ -2,22 +2,21 @@ package ua.goit.mod_008.HomeWork.MyLinkedList;
 public class MyLinkedList<T> {
     private Node<T> first;
     private Node<T> last;
-    private int listIndex;
+    private int listSize = 0;
     public boolean add(T data){
         Node<T> tempLastNode = this.last;
         Node<T> newNode = new Node(tempLastNode, null, data);
         this.last = newNode;
         if(first == null){
             this.first = newNode;
-            listIndex = 0;
         }else{
             tempLastNode.next = newNode;
-            listIndex++;
         }
+        listSize++;
         return true;
     }
     public int size(){
-        return this.listIndex + 1;
+        return this.listSize;
     }
     public T get(int index) {
         return this.findNodeByIndex(index).data;
@@ -34,6 +33,7 @@ public class MyLinkedList<T> {
             tempNext.prev = tempPrev;
         }
         current = null;
+        this.listSize--;
         return data;
     }
     public void clear(){
@@ -46,7 +46,7 @@ public class MyLinkedList<T> {
             current = next;
         }
         this.first = this.last = null;
-        this.listIndex = 0;
+        this.listSize = 0;
         System.out.println("The list is clear!");
     }
     private Node<T> findNodeByIndex(int index) throws IndexOutOfBoundsException {
@@ -66,19 +66,19 @@ public class MyLinkedList<T> {
     }
     public void output() {
         Node<T> current = first;
-        while(current.hasNext()){
+        while(current != null){
+            Node<T> next = current.next;
             System.out.println(current.data);
-            current = current.next;
+            current = next;
         }
-        System.out.println(current.data);
     }
     public void outputReverse() {
         Node<T> current = last;
-        while(current.hasPrev()){
+        while(current != null){
+            Node<T> prev = current.prev;
             System.out.println(current.data);
-            current = current.prev;
+            current = prev;
         }
-        System.out.println(current.data);
     }
     private static class Node<T> {
         T data;

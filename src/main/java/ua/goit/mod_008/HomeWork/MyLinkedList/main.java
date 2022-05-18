@@ -44,10 +44,11 @@ public class main {
         myList.output();
         System.out.println("================");
         System.out.println("size() " + myList.size());
-        System.out.println("get(1) " + myList.get(6));
+        System.out.println("get() " + myList.get(6));
         System.out.println("=== Remove output ===");
         System.out.println("removed " + myList.remove(3));
         myList.output();
+        myList.outputReverse();
         myList.clear();
         System.out.println("=======&&&=======");
         myList.output();
