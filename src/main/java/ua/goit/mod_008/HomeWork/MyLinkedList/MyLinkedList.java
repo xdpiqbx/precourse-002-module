@@ -12,13 +12,13 @@ public class MyLinkedList<T> {
     private Node<T> last;
     private int listSize = 0;
     public boolean add(T data){
-        Node<T> tempLastNode = this.last;
-        Node<T> newNode = new Node(tempLastNode, null, data);
+        Node<T> tempCurrentNode = this.last;
+        Node<T> newNode = new Node(tempCurrentNode, null, data);
         this.last = newNode;
         if(first == null){
             this.first = newNode;
         }else{
-            tempLastNode.next = newNode;
+            tempCurrentNode.next = newNode;
         }
         this.listSize++;
         return true;
