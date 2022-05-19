@@ -1,5 +1,7 @@
 package ua.goit.mod_008.HomeWork.MyQueue;
 
+import ua.goit.mod_008.HomeWork.MyLinkedList.MyLinkedList;
+
 import java.util.NoSuchElementException;
 
 /*
@@ -74,7 +76,7 @@ public class MyQueue<T> {
         StringBuilder builder = new StringBuilder();
         while(current != null){
             Node<T> next = current.next;
-            builder.append("\"" + current.data + (current.next != null ? "\", " : "\""));
+            builder.append("\"").append(current.data).append(current.next != null ? "\", " : "\"");
             current = next;
         }
         return "[" + builder + "]";
@@ -87,9 +89,6 @@ public class MyQueue<T> {
             this.prev = prev;
             this.data = data;
             this.next = next;
-        }
-        boolean hasNext(){
-            return this.next != null;
         }
     }
 }
