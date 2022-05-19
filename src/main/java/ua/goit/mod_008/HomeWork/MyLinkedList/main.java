@@ -17,7 +17,7 @@ public class main {
         myList.output();
 
         System.out.println("\r\nsize() " + myList.size());
-        System.out.println("get(6) => " + myList.get(6));
+        System.out.println("get(6) => " + myList.get(4));
 
         System.out.println("\r\n=== Remove output ===");
         System.out.println("removed by index 3 => " + myList.remove(3));
