@@ -17,8 +17,45 @@ public class MyStack<T> {
         this.stackSize++;
         return true;
     }
+    public T remove(){
+        T data = this.first.data;
+        this.first = this.first.next;
+        this.stackSize--;
+        return data;
+    }
+    public T remove(int index){
+        Node<T> current = this.findNodeByIndex(index);
+        T data = current.data;
+        if(index == 0) {
+            this.first = current.next;
+        }else{
+            Node<T> prev = this.findNodeByIndex(index - 1);
+            prev.next = current.next;
+        }
+        current = null;
+        this.stackSize--;
+        return data;
+    }
+    private Node<T> findNodeByIndex(int index) throws IndexOutOfBoundsException {
+        if(index < 0 || index >= this.stackSize){
+            throw new IndexOutOfBoundsException();
+        }
+        return this.searchNodeFromStart(index);
+    }
+    private Node<T> searchNodeFromStart(int index){
+        Node<T> current = this.first;
+        int tempIndex = 0;
+        while(current.hasNext()) {
+            if (index == tempIndex) {
+                break;
+            }
+            current = current.next;
+            tempIndex++;
+        }
+        return current;
+    }
     public int size(){
-        return this.size();
+        return this.stackSize;
     }
     public void clear(){
         Node<T> current = this.first;
@@ -51,6 +88,9 @@ public class MyStack<T> {
         Node<T> next;
         Node(T data) {
             this.data = data;
+        }
+        boolean hasNext(){
+            return this.next != null;
         }
     }
 }
