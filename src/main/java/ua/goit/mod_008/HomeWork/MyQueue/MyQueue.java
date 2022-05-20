@@ -17,16 +17,14 @@ public class MyQueue<T> {
     private Node<T> first;
     private Node<T> last;
     private int queueSize = 0;
-
     public boolean add(T data){
-        Node<T> tempCurrentNode = this.last;
-        Node<T> newNode = new Node(tempCurrentNode, null, data);
-        this.last = newNode;
-        if(first == null){
+        Node<T> newNode = new Node<>(data);
+        if(this.first == null){
             this.first = newNode;
         }else{
-            tempCurrentNode.next = newNode;
+            this.last.next = newNode;
         }
+        this.last = newNode;
         this.queueSize++;
         return true;
     }
@@ -84,11 +82,8 @@ public class MyQueue<T> {
     private static class Node<T> {
         T data;
         Node<T> next;
-        Node<T> prev;
-        Node(Node<T>prev, Node<T>next, T data) {
-            this.prev = prev;
+        Node(T data) {
             this.data = data;
-            this.next = next;
         }
     }
 }

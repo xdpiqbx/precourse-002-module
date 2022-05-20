@@ -85,21 +85,32 @@ public class MyLinkedList<T> {
         }
         return current;
     }
-    public void output() {
+    @Override
+    public String toString() {
+        if(this.listSize == 0){
+            return "List is empty";
+        }
         Node<T> current = first;
+        StringBuilder builder = new StringBuilder();
         while(current != null){
             Node<T> next = current.next;
-            System.out.println(current.data);
+            builder.append("\"").append(current.data).append(current.next != null ? "\", " : "\"");
             current = next;
         }
+        return "[" + builder + "]";
     }
-    public void outputReverse() {
+    public String outputReverse() {
+        if(this.listSize == 0){
+            return "List is empty";
+        }
         Node<T> current = last;
+        StringBuilder builder = new StringBuilder();
         while(current != null){
             Node<T> prev = current.prev;
-            System.out.println(current.data);
+            builder.append("\"").append(current.data).append(current.prev != null ? "\", " : "\"");
             current = prev;
         }
+        return "[" + builder + "]";
     }
     private static class Node<T> {
         T data;

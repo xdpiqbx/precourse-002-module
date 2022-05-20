@@ -14,20 +14,22 @@ public class main {
         myList.add("MY 005");
         myList.add("MY 006");
         myList.add("MY 007");
-        myList.output();
+        System.out.println(myList);
 
         System.out.println("\r\nsize() " + myList.size());
-        System.out.println("get(6) => " + myList.get(4));
+        System.out.println("get(6) => \"" + myList.get(4) + "\"");
 
         System.out.println("\r\n=== Remove output ===");
-        System.out.println("removed by index 3 => " + myList.remove(3));
+        System.out.println("removed by index 3 => \"" + myList.remove(3) + "\"");
+
+        System.out.println("\r\n=== .size() ===");
         System.out.println("size() " + myList.size());
-        myList.output();
+        System.out.println(myList);
 
         System.out.println("\r\n=== Output Reverse ===");
-        myList.outputReverse();
+        System.out.println(myList.outputReverse());
         myList.clear();
         System.out.println("\r\n=== After clear ===");
-        myList.output();
+        System.out.println(myList);
     }
 }
