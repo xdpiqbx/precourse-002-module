@@ -6,30 +6,12 @@ import java.util.Stack;
 + remove(int index) удаляет элемент под индексом
 + clear() очищает коллекцию
 + size() возвращает размер коллекции
-- peek() возвращает первый элемент в стеке (LIFO)
-- pop() возвращает первый элемент в стеке и удаляет его из коллекции
-*/
-/*
-- peek() возвращает первый элемент в стеке (LIFO) - without removing
-peek() Throws: EmptyStackException – if this stack is empty.
-- pop() возвращает первый элемент в стеке и удаляет его из коллекции
-pop() Throws: EmptyStackException – if this stack is empty.
++ peek() возвращает первый элемент в стеке (LIFO)
++ pop() возвращает первый элемент в стеке и удаляет его из коллекции
 */
 
 public class main {
     public static void main(String[] args) {
-//        Stack <String> stack = new Stack<>();
-//        stack.push("Stack 001");
-//        stack.push("Stack 002");
-//        stack.push("Stack 003");
-//        stack.push("Stack 004");
-//        stack.push("Stack 005");
-//
-//        stack.remove(1);
-//        System.out.println(stack.size());
-//        stack.clear();
-//        System.out.println(stack);
-
         MyStack<String> myStack = new MyStack<>();
 
         myStack.push("My Stack 001");
@@ -37,18 +19,33 @@ public class main {
         myStack.push("My Stack 003");
         myStack.push("My Stack 004");
         myStack.push("My Stack 005");
-        System.out.println(myStack);
+        System.out.println("\n\r"+myStack);
 
-        System.out.println("\r\n=== .remove() ===");
-        System.out.println("Removed - " + myStack.remove());
-        System.out.println(myStack);
-
-        int index = 0;
+        int index = 2;
         System.out.printf("%n=== .remove(%d) by index ===%n", index);
         System.out.println("Removed - " + myStack.remove(index));
         System.out.println(myStack);
 
-//        myStack.clear();
-//        System.out.println(myStack);
+        System.out.println("\n\r=== .size() by index ===");
+        System.out.println("Size of stack: " + myStack.size());
+
+        System.out.println("\n\r=== .peak() ===");
+        System.out.println(myStack.peak());
+        System.out.println(myStack);
+
+        System.out.println("\n\r=== .pop() ===");
+        System.out.println(myStack.pop());
+        System.out.println(myStack);
+        System.out.println(myStack.pop());
+        System.out.println(myStack);
+        System.out.println(myStack.pop());
+        System.out.println(myStack);
+        System.out.println(myStack.pop());
+        System.out.println(myStack); // Stack is empty
+//        System.out.println(myStack.pop()); // Exception in thread "main" java.util.EmptyStackException
+
+        System.out.println("\n\r=== .clear() ===");
+        myStack.clear();
+        System.out.println(myStack);
     }
 }
