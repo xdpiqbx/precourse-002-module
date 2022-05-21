@@ -1,7 +1,14 @@
 package ua.goit.mod_008.HomeWork.MyStack;
 
 import java.util.Stack;
-
+/*
++ push(Object value) добавляет элемент в конец
++ remove(int index) удаляет элемент под индексом
++ clear() очищает коллекцию
++ size() возвращает размер коллекции
+- peek() возвращает первый элемент в стеке (LIFO)
+- pop() возвращает первый элемент в стеке и удаляет его из коллекции
+*/
 /*
 - peek() возвращает первый элемент в стеке (LIFO) - without removing
 peek() Throws: EmptyStackException – if this stack is empty.
@@ -24,17 +31,21 @@ public class main {
 //        System.out.println(stack);
 
         MyStack<String> myStack = new MyStack<>();
+
         myStack.push("My Stack 001");
         myStack.push("My Stack 002");
         myStack.push("My Stack 003");
         myStack.push("My Stack 004");
         myStack.push("My Stack 005");
-        System.out.println(
-            myStack.remove(4)
-        );
-        System.out.println(
-            myStack.remove()
-        );
+        System.out.println(myStack);
+
+        System.out.println("\r\n=== .remove() ===");
+        System.out.println("Removed - " + myStack.remove());
+        System.out.println(myStack);
+
+        int index = 0;
+        System.out.printf("%n=== .remove(%d) by index ===%n", index);
+        System.out.println("Removed - " + myStack.remove(index));
         System.out.println(myStack);
 
 //        myStack.clear();

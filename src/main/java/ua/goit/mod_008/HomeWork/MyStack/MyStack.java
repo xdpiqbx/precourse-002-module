@@ -1,7 +1,5 @@
 package ua.goit.mod_008.HomeWork.MyStack;
 
-import ua.goit.mod_008.HomeWork.MyQueue.MyQueue;
-
 public class MyStack<T> {
     private Node<T> first;
     private Node<T> last;
