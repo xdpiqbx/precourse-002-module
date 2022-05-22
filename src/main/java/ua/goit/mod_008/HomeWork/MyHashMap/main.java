@@ -13,14 +13,25 @@ import java.util.Map;
 Методы
 
 put(Object key, Object value) добавляет пару ключ + значение
-remove(Object key) удаляет пару по ключу
-clear() очищает коллекцию
 size() возвращает размер коллекции
 get(Object key) возвращает значение (Object value) по ключу
+remove(Object key) удаляет пару по ключу
+clear() очищает коллекцию
 */
 
 public class main {
     public static void main(String[] args) {
-        Map<String, String> hashMap = new HashMap<>(); // <Key, Value>
+        Map<Integer, String> hashMap = new HashMap<>(); // <Key, Value>
+        hashMap.put(10, "Bill");
+        hashMap.put(20, "John");
+        hashMap.put(30, "Stan");
+        hashMap.put(40, "Will");
+        System.out.println(hashMap);
+        System.out.println("Size: " + hashMap.size());
+        System.out.println("get(): " + hashMap.get(30));
+        System.out.println("remove(): " + hashMap.remove(10));
+        System.out.println(hashMap);
+        hashMap.clear();
+        System.out.println(hashMap);
     }
 }
