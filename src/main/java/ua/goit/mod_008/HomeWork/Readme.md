@@ -82,3 +82,5 @@
 - `clear()` очищает коллекцию
 - `size()` возвращает размер коллекции
 - `get(Object key)` возвращает значение (Object value) по ключу
+
+https://www.youtube.com/watch?v=PdTizKkCI5c&list=PL7Bt6mWpiiza-bvhK-O1dNjIITX7nReHk&index=8

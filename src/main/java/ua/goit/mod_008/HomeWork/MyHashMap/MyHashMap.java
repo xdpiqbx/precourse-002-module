@@ -1,17 +1,19 @@
 package ua.goit.mod_008.HomeWork.MyHashMap;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
 public class MyHashMap <K, V> {
     private Node<K,V>[] bucketsArray;
     private int totalNumberOfNodes = 0;
     static class Node<K, V>{
-        final int hash;
+        final int iHash;
         final K key;
         V value;
         Node<K,V> next;
-        Node(int hash, K key, V value, Node<K,V> next) {
-            this.hash = hash;
+        Node(int iHash, K key, V value, Node<K,V> next) {
+            this.iHash = iHash;
             this.key = key;
             this.value = value;
             this.next = next;
@@ -29,12 +31,18 @@ public class MyHashMap <K, V> {
             Node<?, ?> node = (Node<?, ?>) o;
             return Objects.equals(this.key, node.key);
         }
-        @Override
-        public int hashCode() {
-            return Objects.hash(key);
-        }
-    }
 
+    }
+    public String convertToSHA256 (String str) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        md.update(str.getBytes());
+        byte[] digest = md.digest();
+        StringBuffer hexStr = new StringBuffer();
+        for (byte dig: digest) {
+            hexStr.append(Integer.toHexString(0xFF & dig));
+        }
+        return hexStr.toString();
+    }
 //    static final int hash(Object key) {
 //        int h;
 //        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
