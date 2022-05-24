@@ -39,12 +39,5 @@ public class main {
         System.out.println(hashMap);
 
         MyHashMap<Integer, String> myHashMap = new MyHashMap<>();
-        try{
-            myHashMap.convertToSHA256("test");
-            myHashMap.convertToSHA256("test");
-            myHashMap.convertToSHA256("test2");
-        }catch (NoSuchAlgorithmException err){
-            System.out.println(err.toString());
-        }
     }
 }

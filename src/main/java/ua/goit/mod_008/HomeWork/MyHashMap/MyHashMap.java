@@ -1,18 +1,42 @@
 package ua.goit.mod_008.HomeWork.MyHashMap;
 
+import java.util.List;
 import java.util.Objects;
 
 public class MyHashMap <K, V> {
     private Node<K,V>[] bucketsArray;
-    static final int DEFAULT_INITIAL_CAPACITY = 16;
     private int totalNumberOfNodes = 0;
+    static final int DEFAULT_INITIAL_CAPACITY = 16;
+
+    public MyHashMap(){
+        bucketsArray = new Node[DEFAULT_INITIAL_CAPACITY];
+    }
+
+    public boolean put(K key, V value){
+        Node <K, V> newNode = new Node<>(key, value, null);
+        int bucketIndex = this.indexOfTargetBucketCell(newNode);
+        if (bucketsArray[bucketIndex] == null){
+            return simpleAdd(bucketIndex, newNode);
+        }
+
+        List<Node<K,V>> nodeList = bucketsArray[bucketIndex].getNodes();
+
+        return true;
+    }
+
+    private boolean simpleAdd(int index, Node<K,V> newNode){
+        bucketsArray[index] = new Node<>(null, null);
+        bucketsArray[index].getNodes().add();
+        return true;
+    }
+
     static class Node<K, V>{
         final int iHash;
-        final K key;
+        K key;
         V value;
         Node<K,V> next;
-        Node(int iHash, K key, V value, Node<K,V> next) {
-            this.iHash = iHash;
+        Node(K key, V value, Node<K,V> next) {
+            this.iHash = this.hashCode();
             this.key = key;
             this.value = value;
             this.next = next;
