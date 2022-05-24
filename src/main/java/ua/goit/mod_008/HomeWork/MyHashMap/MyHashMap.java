@@ -30,10 +30,6 @@ public class MyHashMap <K, V> {
             if (!Objects.equals(key, node.key)) return false;
             return Objects.equals(value, node.value);
         }
-        private int indexOfTargetBucketCell(){
-            int target = hashCode() % DEFAULT_INITIAL_CAPACITY;
-            return target;
-        }
         @Override
         public int hashCode() {
             int result = iHash;
@@ -41,5 +37,8 @@ public class MyHashMap <K, V> {
             result = 31 * result + (value != null ? value.hashCode() : 0);
             return result;
         }
+    }
+    private int indexOfTargetBucketCell(Node<K, V> node){
+        return node.iHash % bucketsArray.length;
     }
 }
