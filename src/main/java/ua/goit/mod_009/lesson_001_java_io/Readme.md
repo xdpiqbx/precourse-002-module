@@ -1,0 +1,2 @@
+![](https://594048267-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LVU7WiFKajQhwsnAlGh%2F-LbYMepJOToeF0t0L1rO%2F-LbYN1JZV9D8V8Dy_ffm%2FIO_InputOutputStreams.png?alt=media&token=7420b713-fa54-45cb-adfc-a4f4c422c5cc)
+![](https://static.javatpoint.com/java/javaio/images/java-io-flow.png)
