@@ -1,6 +1,5 @@
 package ua.goit.mod_008.HomeWork.MyHashMap;
 
-import java.util.List;
 import java.util.Objects;
 
 public class MyHashMap <K, V> {
@@ -14,32 +13,28 @@ public class MyHashMap <K, V> {
 
     public boolean put(K key, V value){
         Node <K, V> newNode = new Node<>(key, value, null);
-        int bucketIndex = this.indexOfTargetBucketCell(newNode);
+        int bucketIndex = this.indexOfTargetBucketCell(newNode.iHash);
         if (bucketsArray[bucketIndex] == null){
-            return simpleAdd(bucketIndex, newNode);
+            bucketsArray[bucketIndex] = newNode;
         }
-
-        List<Node<K,V>> nodeList = bucketsArray[bucketIndex].getNodes();
-
+        bucketsArray[bucketIndex].next = newNode;
+        System.out.println(bucketsArray[bucketIndex].value);
         return true;
     }
-
-    private boolean simpleAdd(int index, Node<K,V> newNode){
-        bucketsArray[index] = new Node<>(null, null);
-        bucketsArray[index].getNodes().add();
-        return true;
+    private int indexOfTargetBucketCell(int nodeHash){
+        return nodeHash % bucketsArray.length;
     }
 
-    static class Node<K, V>{
+    static private class Node<K, V>{
         final int iHash;
         K key;
         V value;
         Node<K,V> next;
         Node(K key, V value, Node<K,V> next) {
-            this.iHash = this.hashCode();
             this.key = key;
             this.value = value;
             this.next = next;
+            this.iHash = this.hashCode();
         }
         @Override
         public String toString() {
@@ -61,8 +56,5 @@ public class MyHashMap <K, V> {
             result = 31 * result + (value != null ? value.hashCode() : 0);
             return result;
         }
-    }
-    private int indexOfTargetBucketCell(Node<K, V> node){
-        return node.iHash % bucketsArray.length;
     }
 }
