@@ -39,15 +39,15 @@ public class main {
         System.out.println(hashMap);
 
         MyHashMap<Integer, String> myHashMap = new MyHashMap<>();
-        myHashMap.put(1, "Onqe");
-        myHashMap.put(2, "Oneew");
-        myHashMap.put(3, "Onre");
-        myHashMap.put(4, "Onte");
-        myHashMap.put(5, "Onue");
-        myHashMap.put(6, "Onie");
-        myHashMap.put(7, "Onoe");
-        myHashMap.put(8, "Onpe");
-        myHashMap.put(9, "On[e");
-        myHashMap.put(9, "Onle");
+        myHashMap.put(1, "One");
+        myHashMap.put(2, "Two");
+        myHashMap.put(3, "Three");
+        myHashMap.put(4, "Four");
+        myHashMap.put(5, "Five");
+        myHashMap.put(6, "Six");
+        myHashMap.put(7, "Seven");
+        myHashMap.put(8, "Eight");
+        myHashMap.put(9, "Nine");
+        myHashMap.put(10, "Ten");
     }
 }

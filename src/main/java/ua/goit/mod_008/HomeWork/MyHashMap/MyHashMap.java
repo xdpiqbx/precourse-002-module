@@ -18,7 +18,7 @@ public class MyHashMap <K, V> {
             bucketsArray[bucketIndex] = newNode;
         }
         bucketsArray[bucketIndex].next = newNode;
-        System.out.println(bucketsArray[bucketIndex].value);
+        System.out.println(bucketsArray[bucketIndex].key +" - "+ bucketsArray[bucketIndex].value);
         return true;
     }
     private int indexOfTargetBucketCell(int nodeHash){
