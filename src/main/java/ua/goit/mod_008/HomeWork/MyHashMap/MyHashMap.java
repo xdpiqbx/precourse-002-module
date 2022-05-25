@@ -1,25 +1,40 @@
 package ua.goit.mod_008.HomeWork.MyHashMap;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class MyHashMap <K, V> {
-    private Node<K,V>[] bucketsArray;
-    private int totalNumberOfNodes = 0;
     static final int DEFAULT_INITIAL_CAPACITY = 16;
-
-    public MyHashMap(){
-        bucketsArray = new Node[DEFAULT_INITIAL_CAPACITY];
-    }
+    private int totalNumberOfNodes = 0;
+    private Node<K,V>[] bucketsArray = new Node[DEFAULT_INITIAL_CAPACITY];
 
     public boolean put(K key, V value){
         Node <K, V> newNode = new Node<>(key, value, null);
         int bucketIndex = this.indexOfTargetBucketCell(newNode.iHash);
-        if (bucketsArray[bucketIndex] == null){
-            bucketsArray[bucketIndex] = newNode;
+        if (this.bucketsArray[bucketIndex] == null){
+            this.bucketsArray[bucketIndex] = newNode;
         }
-        bucketsArray[bucketIndex].next = newNode;
-        System.out.println(bucketsArray[bucketIndex].key +" - "+ bucketsArray[bucketIndex].value);
+        this.bucketsArray[bucketIndex].next = newNode;
+        totalNumberOfNodes++;
+
+        int bucketsArrayLength = this.bucketsArray.length;
+        for (int i = 0; i < bucketsArrayLength; i++) {
+            System.out.println(this.bucketsArray[i].value);
+        }
+
         return true;
+    }
+    public void mapToString(){
+        System.out.println(this.bucketsArray.length);
+//        System.out.println(this.bucketsArray[0].value);
+        System.out.println(this.totalNumberOfNodes);
+        int bucketsArrayLength = this.bucketsArray.length;
+
+//        for (int i = 0; i < bucketsArrayLength; i++) {
+//            System.out.println(
+//                this.bucketsArray[i].value
+//            );
+//        }
     }
     private int indexOfTargetBucketCell(int nodeHash){
         return nodeHash % bucketsArray.length;
@@ -36,6 +51,7 @@ public class MyHashMap <K, V> {
             this.next = next;
             this.iHash = this.hashCode();
         }
+
         @Override
         public String toString() {
             return "Node {" + key + "=" + value + "}";

@@ -49,5 +49,34 @@ public class main {
         myHashMap.put(8, "Eight");
         myHashMap.put(9, "Nine");
         myHashMap.put(10, "Ten");
+        myHashMap.put(10, "Ten");
+        myHashMap.put(10, "Ten");
+        myHashMap.put(1, "One");
+        myHashMap.put(2, "Two");
+        myHashMap.put(3, "Three");
+        myHashMap.put(4, "Four");
+        myHashMap.put(5, "Five");
+        myHashMap.put(6, "Six");
+        myHashMap.put(7, "Seven");
+        myHashMap.put(8, "Eight");
+        myHashMap.put(9, "Nine");
+        myHashMap.put(10, "Ten");
+        myHashMap.put(10, "Ten");
+        myHashMap.put(10, "Ten");
+        myHashMap.put(1, "One");
+        myHashMap.put(2, "Two");
+        myHashMap.put(3, "Three");
+        myHashMap.put(4, "Four");
+        myHashMap.put(5, "Five");
+        myHashMap.put(6, "Six");
+        myHashMap.put(7, "Seven");
+        myHashMap.put(8, "Eight");
+        myHashMap.put(9, "Nine");
+        myHashMap.put(10, "Ten");
+        myHashMap.put(10, "Ten");
+        myHashMap.put(10, "Ten");
+
+        myHashMap.mapToString();
+//        System.out.println(myHashMap);
     }
 }
