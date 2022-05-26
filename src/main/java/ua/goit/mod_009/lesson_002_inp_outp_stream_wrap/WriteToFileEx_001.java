@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class WriteToFileEx {
+public class WriteToFileEx_001 {
     public static void main(String[] args) {
         String absolutePath = "D:\\JAVA\\GOIT\\005 Tech Skills (precourse)\\precourse-java-goit\\src\\main\\resources\\out\\file-001.txt";
         File file = new File(absolutePath);
