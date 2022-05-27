@@ -1,4 +1,4 @@
-package ua.goit.mod_009.lesson_003_reder_writer_wraps;
+package ua.goit.mod_009.lesson_005_generics.lesson_003_reder_writer_wraps;
 
 import java.io.File;
 import java.io.FileReader;

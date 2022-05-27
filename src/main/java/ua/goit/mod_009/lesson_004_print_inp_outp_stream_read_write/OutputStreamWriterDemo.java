@@ -16,5 +16,4 @@ public class OutputStreamWriterDemo {
             System.out.println(e.getMessage());
         }
     }
-
 }
