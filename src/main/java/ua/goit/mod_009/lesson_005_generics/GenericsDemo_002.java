@@ -1,8 +1,5 @@
 package ua.goit.mod_009.lesson_005_generics;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class GenericsDemo_002 {
     public static void main(String[] args) {
         GenericTypeOld genericTypeOld = new GenericTypeOld();
@@ -18,5 +15,18 @@ public class GenericsDemo_002 {
         }else{
             System.err.println("Type is wrong");
         }
+
+        //*****************************************************
+        System.out.println("\n\rGenericType<Integer> genericType = new GenericType<>()");
+        GenericType_001<Integer> genericType = new GenericType_001<>();
+        genericType.set(100);
+
+        GenericType_001<String> genericTypeStr = new GenericType_001<>();
+        genericTypeStr.set("200");
+
+//        System.out.println(
+//            "Is equeals generic types? - " +
+//            GenericUtils.isEquals(genericType, genericTypeStr)
+//        );
     }
 }

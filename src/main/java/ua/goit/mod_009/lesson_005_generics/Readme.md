@@ -1,1 +1,7 @@
-https://www.youtube.com/watch?v=AQjM2jifDtg
+E - element
+K - key
+V - value
+N - number
+T - type
+S, U, V ...
+?
