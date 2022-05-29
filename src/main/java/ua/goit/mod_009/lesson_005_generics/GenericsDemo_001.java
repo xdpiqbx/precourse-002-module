@@ -2,10 +2,8 @@ package ua.goit.mod_009.lesson_005_generics;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
-public class GenericsDemo {
+public class GenericsDemo_001 {
     public static void main(String[] args) {
         // Set unicSet = new TreeSet();
         // unicSet.add(100L);

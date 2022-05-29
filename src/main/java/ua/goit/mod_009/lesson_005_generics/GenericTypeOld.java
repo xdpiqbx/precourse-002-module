@@ -5,4 +5,7 @@ public class GenericTypeOld {
     public Object get(){
         return this.type;
     }
+    public void set(Object type){
+        this.type = type;
+    }
 }
