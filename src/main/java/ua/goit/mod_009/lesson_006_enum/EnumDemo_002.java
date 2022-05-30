@@ -17,6 +17,7 @@ public class EnumDemo_002 {
         final Integer dayId = friday.getDayIdentifier();
         System.out.println("Name: " + name + ", dayOfWeek: " + dayOfWeek + ", dayId: " + dayId); // Name: FRIDAY, dayOfWeek: Friday, dayId: 6
         day.workDayOrNot();
+        System.out.println("Hello Java");
 
 //        EnumSet<DayOfWeek> dayOfWeeks = EnumSet.of(DayOfWeek.FRIDAY, DayOfWeek.MONDAY);
         EnumSet<DayOfWeek> dayOfWeeks = EnumSet.allOf(DayOfWeek.class); // [SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY]
