@@ -1,12 +1,11 @@
 package ua.goit.mod_7.HomeWork.geometricObjects.shapes;
 
-import ua.goit.mod_7.HomeWork.Shape;
+import ua.goit.mod_7.HomeWork.abstracts.Shape;
 
-public class Rectangle implements Shape {
-    private static final String type = "Rect";
-
+public class Rectangle extends Shape {
+    private static final String type = "Rectangle";
     @Override
-    public String getFigureTitle() {
-        return this.type;
+    public void getFigureTitle(){
+        System.out.println(this.type);
     }
 }

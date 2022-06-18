@@ -1,12 +1,10 @@
 package ua.goit.mod_7.HomeWork.geometricObjects.lines;
 
-import ua.goit.mod_7.HomeWork.Shape;
+import ua.goit.mod_7.HomeWork.abstracts.Line;
 
-public class Ray implements Shape {
-    private static final String type = "Line";
-
-    @Override
-    public String getFigureTitle() {
-        return this.type;
+public class Ray extends Line {
+    private static final String type = "Ray";
+    public void getFigureTitle(){
+        System.out.println(this.type);
     }
 }

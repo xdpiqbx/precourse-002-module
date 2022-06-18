@@ -1,12 +1,11 @@
 package ua.goit.mod_7.HomeWork;
 
+import ua.goit.mod_7.HomeWork.interfaces.GeometricObject;
+
 public class Figure{
-    private Shape figure;
-    public Figure(Shape figure){
-        this.figure = figure;
-    }
-    @Override
-    public String toString() {
-        return this.figure.getFigureTitle();
+    Figure(GeometricObject obj){
+        if (obj instanceof GeometricObject){
+            obj.getFigureTitle();
+        }
     }
 }
