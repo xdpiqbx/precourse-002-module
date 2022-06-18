@@ -1,8 +1,8 @@
-package ua.goit.mod_7.HomeWork.figures;
+package ua.goit.mod_7.HomeWork.geometricObjects.shapes;
 
 import ua.goit.mod_7.HomeWork.Shape;
 
-public class Rect implements Shape {
+public class Rectangle implements Shape {
     private static final String type = "Rect";
 
     @Override

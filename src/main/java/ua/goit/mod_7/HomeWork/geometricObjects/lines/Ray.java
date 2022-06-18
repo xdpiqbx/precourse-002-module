@@ -1,8 +1,8 @@
-package ua.goit.mod_7.HomeWork.figures;
+package ua.goit.mod_7.HomeWork.geometricObjects.lines;
 
 import ua.goit.mod_7.HomeWork.Shape;
 
-public class Line implements Shape {
+public class Ray implements Shape {
     private static final String type = "Line";
 
     @Override

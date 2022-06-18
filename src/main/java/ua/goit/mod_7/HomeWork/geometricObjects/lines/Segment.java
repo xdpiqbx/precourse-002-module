@@ -1,8 +1,8 @@
-package ua.goit.mod_7.HomeWork.figures;
+package ua.goit.mod_7.HomeWork.geometricObjects.lines;
 
 import ua.goit.mod_7.HomeWork.Shape;
 
-public class Triangle implements Shape {
+public class Segment implements Shape {
     private static final String type = "Triangle";
 
     @Override

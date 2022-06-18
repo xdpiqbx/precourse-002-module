@@ -1,4 +1,4 @@
-package ua.goit.mod_7.HomeWork.figures;
+package ua.goit.mod_7.HomeWork.geometricObjects.shapes;
 
 import ua.goit.mod_7.HomeWork.Shape;
 
