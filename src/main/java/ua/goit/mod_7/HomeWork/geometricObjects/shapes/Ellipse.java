@@ -5,7 +5,7 @@ import ua.goit.mod_7.HomeWork.abstracts.Shape;
 public class Ellipse extends Shape {
     private static final String type = "Ellipse";
     @Override
-    public void getFigureTitle(){
-        System.out.println(this.type);
+    public String getFigureTitle(){
+        return this.type;
     }
 }
