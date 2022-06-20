@@ -30,5 +30,14 @@ public class Main {
         for (String item: strings) {
             System.out.println(item);
         }
+
+        /*
+        * TOP:
+        * add
+        * get
+        * size
+        * isEmpty
+        * remove
+        * */
     }
 }
