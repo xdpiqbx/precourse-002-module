@@ -33,6 +33,15 @@ public class IfElseTernarSwitch {
             default:
                 System.out.println("Other");
         }
+
+        // Java 14 syntax
+        int iNum = getRandomInt();
+        switch(iNum){
+            case 1 -> System.out.println("One");
+            case 2 -> System.out.println("Two");
+            case 3 -> System.out.println("Three");
+            default -> System.out.println("Other");
+        }
     }
     private static void whatToDoWithAge(int iAge) {
         if(iAge >= 18){
