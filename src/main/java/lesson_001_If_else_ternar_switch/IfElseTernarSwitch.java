@@ -1,5 +1,6 @@
 package main.java.lesson_001_If_else_ternar_switch;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class IfElseTernarSwitch {
