@@ -5,6 +5,7 @@ import java.util.*;
 public class SeasonTests {
     public static void main(String[] args) {
         // Use simpe map
+//        Map<Season, String> seasonDescriptions = new HashMap<>(Season.class); // or EnumMap
         Map<Season, String> seasonDescriptions = new EnumMap<>(Season.class);
         seasonDescriptions.put(Season.autumn, "Leaves falls");
         System.out.println("seasonDescriptions = " + seasonDescriptions);

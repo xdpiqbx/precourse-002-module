@@ -8,7 +8,7 @@ public class MapUtilityMethods {
         // to get immutable Empty Map
         Collections.emptyMap();
 
-        // Non-empty map
+        // Non-empty map, no more than 10
         Map<String, Integer> peopleAge = Map.of(
                 "Igor", 30,
                 "Max", 30,
