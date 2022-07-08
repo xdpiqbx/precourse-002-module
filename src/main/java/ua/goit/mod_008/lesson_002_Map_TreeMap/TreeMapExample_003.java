@@ -1,9 +1,7 @@
 package ua.goit.mod_008.lesson_002_Map_TreeMap;
 
-import ua.goit.mod_008.lesson_001_Map_HashMap_LinkedHashMap.Employee;
+import ua.goit.mod_008.lesson_002_Map_TreeMap.lesson_001_Map_HashMap_LinkedHashMap.Employee;
 
-import java.util.Comparator;
-import java.util.SortedMap;
 import java.util.TreeMap;
 
 public class TreeMapExample_003 {

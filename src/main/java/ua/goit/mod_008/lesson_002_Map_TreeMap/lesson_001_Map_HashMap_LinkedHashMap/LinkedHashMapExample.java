@@ -1,9 +1,10 @@
-package ua.goit.mod_008.lesson_001_Map_HashMap_LinkedHashMap;
+package ua.goit.mod_008.lesson_002_Map_TreeMap.lesson_001_Map_HashMap_LinkedHashMap;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class HashMapWithCustomKey {
+public class LinkedHashMapExample {
     public static void main(String[] args) {
 
         // 1. o1.equals(o2) -> o1.hashcode() == o2.hashcode()
@@ -22,5 +23,10 @@ public class HashMapWithCustomKey {
         String bill = employees.get(alex);
         System.out.println("Bill: " + bill);
         System.out.println(employees);
+
+        //*********************************************************************
+
+        // saves the order of adding items
+        Map<String, String> linkedMap = new LinkedHashMap<>();
     }
 }

@@ -1,4 +1,4 @@
-package ua.goit.mod_008.lesson_001_Map_HashMap_LinkedHashMap;
+package ua.goit.mod_008.lesson_002_Map_TreeMap.lesson_001_Map_HashMap_LinkedHashMap;
 
 import java.util.Objects;
 
