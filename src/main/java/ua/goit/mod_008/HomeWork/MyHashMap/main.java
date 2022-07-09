@@ -1,9 +1,5 @@
 package ua.goit.mod_008.HomeWork.MyHashMap;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-//import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 /*
@@ -29,6 +25,7 @@ public class main {
         hashMap.put(20, "John");
         hashMap.put(30, "Stan");
         hashMap.put(40, "Will");
+        hashMap.put(40, "Stanley");
         System.out.println(hashMap);
         System.out.println("Size: " + hashMap.size()); // return int
         System.out.println("get(): " + hashMap.get(30)); // return V
@@ -39,29 +36,25 @@ public class main {
 
         System.out.println("##################################");
 
-        LinkedNodes<Integer, String> list = new LinkedNodes<>();
-        list.add(1, "Bill");
-        list.add(2, "John");
-        list.add(3, "Will");
-        list.add(4, "Stan");
-        list.printList();
-
         MyHashMap<Integer, String> myMap = new MyHashMap<>();
+        myMap.put(1, "test1");
+        myMap.put(17, "test17");
+        myMap.put(33, "test33");
+        myMap.put(49, "test49");
+        myMap.put(65, "test65");
+        myMap.put(2, "test2");
+        myMap.put(2, "test000");
+        myMap.put(17, "test17777");
 
-        myMap.put(1, "test");
-        myMap.testBuckets();
-
-//        MyHashMap<Integer, String> myHashMap = new MyHashMap<>();
-//        myHashMap.put(1, "One");
-//        myHashMap.put(2, "Two");
-//        myHashMap.put(3, "Three");
-//        myHashMap.put(4, "Four");
-//        myHashMap.put(5, "Five");
-//        myHashMap.put(6, "Six");
-//        myHashMap.put(7, "Seven");
-//        myHashMap.put(8, "Eight");
-//        myHashMap.put(9, "Nine");
-//        myHashMap.put(10, "Ten");
-//        System.out.println(myHashMap);
+        System.out.println(myMap);
+        myMap.clear();
+//        myMap.remove(65);
+//        myMap.remove(49);
+//        myMap.remove(33);
+//        myMap.remove(17);
+//        myMap.remove(1);
+//        myMap.remove(2);
+        System.out.println("====================");
+        System.out.println(myMap);
     }
 }

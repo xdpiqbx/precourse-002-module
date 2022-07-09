@@ -22,6 +22,10 @@ public class Node <K, V> {
         return value;
     }
 
+    public void setValue(V value) {
+        this.value = value;
+    }
+
     public int getHash() {
         return hash;
     }
@@ -47,6 +51,6 @@ public class Node <K, V> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, value);
+        return Objects.hash(key);
     }
 }
