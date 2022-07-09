@@ -16,6 +16,18 @@ public class LinkedNodes<K, V> {
         last.setNext(node);
     }
 
+    public void addNode(Node<K, V> node){
+        if(this.first == null){
+            this.first = node;
+            return;
+        }
+        Node<K, V> last = first;
+        while(last.getNext() != null){
+            last = last.getNext();
+        }
+        last.setNext(node);
+    }
+
     public void printList(){
         Node <K, V> node = first;
         while(node != null){

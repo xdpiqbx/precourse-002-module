@@ -46,11 +46,10 @@ public class main {
         list.add(4, "Stan");
         list.printList();
 
-        System.out.println("START");
-        for (int i=0; i<20; i++){
-            System.out.println(i+" = "+(Objects.hash(i) & (16-1)));
-        }
+        MyHashMap<Integer, String> myMap = new MyHashMap<>();
 
+        myMap.put(1, "test");
+        myMap.testBuckets();
 
 //        MyHashMap<Integer, String> myHashMap = new MyHashMap<>();
 //        myHashMap.put(1, "One");

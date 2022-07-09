@@ -22,6 +22,10 @@ public class Node <K, V> {
         return value;
     }
 
+    public int getHash() {
+        return hash;
+    }
+
     public void setNext(Node<K, V> next) {
         this.next = next;
     }
