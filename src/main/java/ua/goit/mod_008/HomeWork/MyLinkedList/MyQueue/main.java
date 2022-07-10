@@ -1,18 +1,7 @@
-package ua.goit.mod_008.HomeWork.MyQueue;
-
-import java.util.LinkedList;
-import java.util.Queue;
+package ua.goit.mod_008.HomeWork.MyLinkedList.MyQueue;
 
 public class main {
     public static void main(String[] args) {
-    /*
-        add(Object value) добавляет элемент в конец
-        remove(int index) удаляет элемент под индексом ***** Очередь не так работает... удалить голову)
-        clear() очищает коллекцию
-        size() возвращает размер коллекции
-        peek() возвращает первый элемент в очереди (FIFO)
-        poll() возвращает первый элемент в очереди и удаляет его из коллекции
-    */
         MyQueue<String> myQueue = new MyQueue<>();
 
         myQueue.add("My Queue 001");

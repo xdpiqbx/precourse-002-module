@@ -1,6 +1,5 @@
 package ua.goit.mod_008.HomeWork.MyHashMap;
 
-import java.sql.Array;
 import java.util.Objects;
 
 public class MyHashMap <K, V> {
@@ -10,6 +9,11 @@ public class MyHashMap <K, V> {
     private int getBucketIndex(int hash){
         return hash & (initialCapacity-1);
     }
+
+    public int size() {
+        return collecitonSize;
+    }
+
     public V put(K key, V value){
         Node<K, V> node = new Node<>(key, value);
         int bucketIndex = getBucketIndex(node.getHash());
@@ -57,8 +61,12 @@ public class MyHashMap <K, V> {
             this.collecitonSize--;
             return val;
         }
+        V removeResult = this.buckets[bucketIndex].remove(key);
+        if(removeResult == null){
+            return null;
+        }
         this.collecitonSize--;
-        return this.buckets[bucketIndex].remove(key);
+        return removeResult;
     }
 
     public void clear(){
@@ -66,16 +74,20 @@ public class MyHashMap <K, V> {
         for (int i = 0; i < len; i++) {
             buckets[i] = null;
         }
+        this.collecitonSize = 0;
     }
 
     @Override
     public String toString(){
         int bucketIndex = 0;
         StringBuilder sb = new StringBuilder();
+        sb.append("----------------------------------\n\r");
+        sb.append("MyHashMap size: "+this.size()+"\n\r");
         for (LinkedNodes<K, V> bucket: buckets) {
             sb.append("[").append(bucketIndex).append(" => ").append(bucket).append("]\n\r");
             bucketIndex++;
         }
+        sb.append("----------------------------------\n\r");
         return sb.toString();
     }
 }

@@ -1,7 +1,5 @@
 package ua.goit.mod_008.HomeWork.MyLinkedList;
 
-import java.util.LinkedList;
-
 public class main {
     public static void main(String[] args) {
         System.out.println("=== MyLinkedList ===");

@@ -1,15 +1,5 @@
 package ua.goit.mod_008.HomeWork.MyStack;
 
-import java.util.Stack;
-/*
-+ push(Object value) добавляет элемент в конец
-+ remove(int index) удаляет элемент под индексом
-+ clear() очищает коллекцию
-+ size() возвращает размер коллекции
-+ peek() возвращает первый элемент в стеке (LIFO)
-+ pop() возвращает первый элемент в стеке и удаляет его из коллекции
-*/
-
 public class main {
     public static void main(String[] args) {
         MyStack<String> myStack = new MyStack<>();

@@ -42,7 +42,7 @@
 
 - `add(Object value)` добавляет элемент в конец
 - `remove(int index)` удаляет элемент под индексом. 
-> **Уточнить у ментора, мож таки `remove()` ???**
+> **(first-in-first-out), сделал `remove()`**
 - `clear()` очищает коллекцию
 - `size()` возвращает размер коллекции
 - `peek()` возвращает первый элемент в очереди (FIFO)
@@ -82,5 +82,3 @@
 - `clear()` очищает коллекцию
 - `size()` возвращает размер коллекции
 - `get(Object key)` возвращает значение (Object value) по ключу
-
-https://www.youtube.com/watch?v=q2zNzC1fXaQ&list=PL7Bt6mWpiiza-bvhK-O1dNjIITX7nReHk&index=7
