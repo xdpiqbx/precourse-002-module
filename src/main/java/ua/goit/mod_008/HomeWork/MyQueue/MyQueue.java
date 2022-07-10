@@ -1,4 +1,4 @@
-package ua.goit.mod_008.HomeWork.MyLinkedList.MyQueue;
+package ua.goit.mod_008.HomeWork.MyQueue;
 
 import java.util.NoSuchElementException;
 

@@ -1,4 +1,4 @@
-package ua.goit.mod_008.HomeWork.MyLinkedList.MyQueue;
+package ua.goit.mod_008.HomeWork.MyQueue;
 
 public class main {
     public static void main(String[] args) {
