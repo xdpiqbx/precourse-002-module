@@ -1,4 +1,4 @@
-package By_Melnichuk;
+package By_Melnichuk.lect_001;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

@@ -1,4 +1,4 @@
-package By_Melnichuk.reader;
+package By_Melnichuk.lect_001.reader;
 
 import java.io.IOException;
 import java.io.Reader;

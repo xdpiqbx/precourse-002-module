@@ -1,4 +1,4 @@
-package By_Melnichuk.copy;
+package By_Melnichuk.lect_001.copy;
 
 import java.io.*;
 
