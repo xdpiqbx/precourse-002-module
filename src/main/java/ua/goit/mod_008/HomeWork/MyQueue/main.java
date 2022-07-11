@@ -9,14 +9,22 @@ public class main {
         myQueue.add("My Queue 003");
         myQueue.add("My Queue 004");
         myQueue.add("My Queue 005");
+        myQueue.add("My Queue 006");
 
         System.out.println(myQueue);
 
         System.out.println("\r\n=== .remove() ===");
         System.out.println("Removed: \"" + myQueue.remove()+"\"");
+        System.out.println(myQueue);
+
+        int removeIndex = 0;
+        System.out.println("\r\n=== .remove("+removeIndex+") ===");
+        System.out.println("Removed: \"" + myQueue.remove(removeIndex)+"\"");
+        System.out.println(myQueue);
 
         System.out.println("\r\n=== .size() ===");
         System.out.println("Queue size: " + myQueue.size());
+        System.out.println(myQueue);
 
         System.out.println("\r\n=== .peek() ===");
         System.out.println("peek: \"" + myQueue.peek() + "\"");
@@ -26,7 +34,6 @@ public class main {
 
         System.out.println("\r\n=== .clear() ===");
         myQueue.clear();
-
         System.out.println(myQueue);
 
         System.out.println("\r\n=== .peek() after .clear() ===");

@@ -36,6 +36,29 @@ public class MyQueue<T> {
         this.queueSize--;
         return data;
     }
+    public T remove(int index) throws NoSuchElementException {
+        if (queueSize == 0){
+            throw new NoSuchElementException();
+        }
+        int counter = 0;
+        Node<T> current = this.first;
+        Node<T> prevNode = current;
+        while(current != null){
+            if(counter == index){
+                if(current.equals(prevNode)){
+                    this.first = current.next;
+                }else{
+                    prevNode.next = current.next;
+                }
+                this.queueSize--;
+                return current.data;
+            }
+            prevNode = current;
+            current = current.next;
+            counter++;
+        }
+        throw new NoSuchElementException();
+    }
     public T poll(){
         if (queueSize == 0){
             return null;

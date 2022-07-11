@@ -48,6 +48,7 @@ public class MyStack<T> {
             int prevIndex = lastIndex == 0 ? 0 : lastIndex - 1;
             Node<T> prev = this.findNodeByIndex(prevIndex);
             data = prev.next.data;
+            this.last = prev;
             prev.next= null;
         }
         this.stackSize--;

@@ -1,7 +1,19 @@
 package ua.goit.mod_008.HomeWork.MyStack;
 
+import java.util.Stack;
+
 public class main {
     public static void main(String[] args) {
+        Stack<String> stack = new Stack<>();
+        stack.push("Stask 001");
+        stack.push("Stask 002");
+        stack.push("Stask 003");
+        System.out.println(stack);
+        stack.pop();
+        System.out.println(stack);
+        stack.peek();
+        System.out.println("========================");
+
         MyStack<String> myStack = new MyStack<>();
 
         myStack.push("My Stack 001");
