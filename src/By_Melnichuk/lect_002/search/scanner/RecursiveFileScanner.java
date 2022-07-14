@@ -1,4 +1,4 @@
-package By_Melnichuk.lect_002.search;
+package By_Melnichuk.lect_002.search.scanner;
 
 import java.io.File;
 import java.util.ArrayList;
