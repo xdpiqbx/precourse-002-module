@@ -1,9 +1,14 @@
 package By_Melnichuk.lect_002.search.search;
 
 public class PrimitiveContentSearcher implements ContentSearcher {
-
     @Override
     public boolean search(String content, String search) {
-        return content.toLowerCase().contains(search.toLowerCase());
+        String[] words = search.toLowerCase().split(" ");
+        for (String word : words) {
+            if(!content.contains(word)){
+                return false;
+            }
+        }
+        return true;
     }
 }
