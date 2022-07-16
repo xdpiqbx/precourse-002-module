@@ -2,7 +2,7 @@ package By_Melnichuk.lect_002.serialize;
 
 import java.io.*;
 
-public class ContactTests {
+public class ContactSerializeTests {
     public static void main(String[] args) throws IOException {
         Contact contact = new Contact();
 
