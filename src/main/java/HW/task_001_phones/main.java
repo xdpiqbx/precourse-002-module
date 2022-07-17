@@ -5,7 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 public class main {
     public static void main(String[] args) {
-        File file = new File("./src/HW/task_001_phones/file.txt");
+        String base = "./src/main/java/HW/";
+        File file = new File(base + "task_001_phones/file.txt");
         try(FileInputStream fileInputStream = new FileInputStream(file)) {
             String [] phones = streamToStrArray(fileInputStream);
             printValidPhones(phones);
@@ -14,8 +15,7 @@ public class main {
         }
     }
     static String [] streamToStrArray (FileInputStream fileInputStream) throws IOException {
-        byte[] buffer = new byte[fileInputStream.available()];
-        fileInputStream.read(buffer);
+        byte[] buffer = fileInputStream.readAllBytes();
         StringBuilder sb = new StringBuilder();
         for (byte b : buffer) {
             sb.append((char) b);
