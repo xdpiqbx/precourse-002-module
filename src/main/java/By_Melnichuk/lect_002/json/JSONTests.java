@@ -14,12 +14,24 @@ public class JSONTests {
         contact.setPhone("093093093");
         contact.setAge(29);
 
+        Contact contact1 = new Contact();
+
+        contact1.setName("Bill");
+        contact1.setEmail("bill@mail.com");
+        contact1.setPhone("067067067");
+        contact1.setAge(25);
+
+        Contact [] contacts = new Contact[]{contact, contact1};
+
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        String resJson = gson.toJson(contact);
+        String resJson = gson.toJson(contacts);
         System.out.println(resJson);
 
-        Contact result = gson.fromJson(resJson, Contact.class);
-        System.out.println("result = " + result);
+        Contact [] result = gson.fromJson(resJson, Contact[].class);
+
+        for (Contact cnt : result) {
+            System.out.println("cnt = " + cnt);
+        }
     }
 }

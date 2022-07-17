@@ -14,6 +14,13 @@ public class main {
         // interface HWPrinter
         // class PrintJSON
 
+        /*
+            вітянуть из файла массив строк построчно
+            первая строка это ключи для значений из остальных строк (сохранить отдельно)
+            создать класс для хранения данных из остальных строк new Person(name, age)
+            каждый Person запихнуть в массив
+        */
+
         String base = "./src/main/java/HW";
         File file = new File(base + "/task_002_json/file.txt");
         try {
