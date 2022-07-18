@@ -9,7 +9,7 @@ import java.util.*;
 public class main {
     public static void main(String[] args) {
         String base = "./src/main/java/HW/task_003_words_freequancy";
-        File inputTXT = new File(base + "/file.txt");
+        File inputTXT = new File(base + "/words.txt");
         try(InputStream inpStrmTxtFile = new FileInputStream(inputTXT)){
 
             String [] strings = streamToStrArray(inpStrmTxtFile);
