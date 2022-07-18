@@ -1,8 +1,5 @@
 package HW.task_003_words_freequancy;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,30 +11,15 @@ public class main {
         String base = "./src/main/java/HW/task_003_words_freequancy";
         File inputTXT = new File(base + "/file.txt");
         try(InputStream inpStrmTxtFile = new FileInputStream(inputTXT)){
+
             String [] strings = streamToStrArray(inpStrmTxtFile);
-            List<String> wordsList = new ArrayList<>();
-            for (String string : strings) {
-                String [] words = string.split(" ");
-                for (String word : words) {
-                    wordsList.add(word.strip());
-                }
-            }
-            Collections.sort(wordsList);
+            List<String> wordsList = stringsToSortedWordsList(strings);
+            Map<String, Integer> wordMap = wordsListToMapWordsCount(wordsList);
+            Map<String, Integer> sortedMap = sortMapByValue(wordMap, false);
 
-            int wordCounter = 0;
-            String firstWord = wordsList.get(0);
-
-            Map<String, Integer> wordMap = new HashMap<>();
-            for (String word : wordsList) {
-                if(firstWord.equals(word)){
-                    wordCounter++;
-                }else{
-                    wordCounter = 1;
-                    firstWord = word;
-                }
-                wordMap.put(firstWord, wordCounter);
+            for (String key : sortedMap.keySet()) {
+                System.out.println(key+" "+sortedMap.get(key));
             }
-            System.out.println(sortMapByValue(false, wordMap));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -50,19 +32,43 @@ public class main {
         }
         return sb.toString().split("\n");
     }
-    private static Map<String, Integer> sortMapByValue(boolean order, Map<String, Integer> map){
+    private static List<String> stringsToSortedWordsList(String [] strings){
+        List<String> wordsList = new ArrayList<>();
+        for (String string : strings) {
+            String [] words = string.split(" ");
+            for (String word : words) {
+                wordsList.add(word.strip());
+            }
+        }
+        Collections.sort(wordsList);
+        return wordsList;
+    }
+    private static Map<String, Integer> wordsListToMapWordsCount(List<String> wordsList){
+        int wordCounter = 0;
+        String firstWord = wordsList.get(0);
+        Map<String, Integer> wordMap = new HashMap<>();
+        for (String word : wordsList) {
+            if(firstWord.equals(word)){
+                wordCounter++;
+            }else{
+                wordCounter = 1;
+                firstWord = word;
+            }
+            wordMap.put(firstWord, wordCounter);
+        }
+        return wordMap;
+    }
+    private static Map<String, Integer> sortMapByValue(Map<String, Integer> map, boolean order){
         List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
         list.sort(new Comparator<Map.Entry<String, Integer>>() {
             public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
                 if (order) {
-                    //compare two object and return an integer
                     return o1.getValue().compareTo(o2.getValue());
                 } else {
                     return o2.getValue().compareTo(o1.getValue());
                 }
             }
         });
-        //prints the sorted HashMap
         Map<String, Integer> sortedMap = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> entry : list){
             sortedMap.put(entry.getKey(), entry.getValue());

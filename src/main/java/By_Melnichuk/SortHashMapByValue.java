@@ -1,6 +1,5 @@
-package HW.task_003_words_freequancy;
+package By_Melnichuk;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -9,12 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class SortByValue
+public class SortHashMapByValue
 {
     Map<String, Integer> map = new HashMap<>();
 
     public static void main(String[] args){
-        SortByValue sv = new SortByValue();
+        SortHashMapByValue sv = new SortHashMapByValue();
         sv.createMap();
         System.out.println("Sorting values in ascending order:");
         sv.sortByValue(true);
