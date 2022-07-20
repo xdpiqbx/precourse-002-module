@@ -1,4 +1,4 @@
-package human;
+package lambdaStream;
 
 @FunctionalInterface
 public interface HumanToIntegerTransformer {

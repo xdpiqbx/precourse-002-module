@@ -1,4 +1,4 @@
-package human;
+package lambdaStream;
 
 public class Human {
     private final String name;
@@ -15,5 +15,13 @@ public class Human {
 
     public int getSalary() {
         return salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }

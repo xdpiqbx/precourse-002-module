@@ -1,4 +1,4 @@
-package human;
+package lambdaStream;
 
 public class HumanToIntegerTransformerTests {
     public static void main(String[] args) {
