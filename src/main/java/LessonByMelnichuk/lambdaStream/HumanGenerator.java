@@ -1,4 +1,4 @@
-package lambdaStream;
+package LessonByMelnichuk.lambdaStream;
 
 import java.util.ArrayList;
 import java.util.Collection;

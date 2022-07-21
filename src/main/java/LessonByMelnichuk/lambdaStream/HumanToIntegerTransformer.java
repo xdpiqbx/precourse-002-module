@@ -1,4 +1,4 @@
-package lambdaStream;
+package LessonByMelnichuk.lambdaStream;
 
 @FunctionalInterface
 public interface HumanToIntegerTransformer {

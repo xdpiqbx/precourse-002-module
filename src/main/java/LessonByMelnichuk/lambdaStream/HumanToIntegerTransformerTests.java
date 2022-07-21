@@ -1,4 +1,4 @@
-package lambdaStream;
+package LessonByMelnichuk.lambdaStream;
 
 public class HumanToIntegerTransformerTests {
     public static void main(String[] args) {

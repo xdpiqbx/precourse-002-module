@@ -1,4 +1,4 @@
-package lambdaStream;
+package LessonByMelnichuk.lambdaStream;
 
 public class HumanToIntegerTransformerImpl implements HumanToIntegerTransformer {
     @Override
