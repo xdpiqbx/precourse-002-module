@@ -48,10 +48,21 @@ public class HumanStreamTests {
 //                .peek(System.out::println)
 //                .toList();
 
-        // Name Secondname -> NAME SECONDNAME
+        // Name Secondname -> NAME secondname
+        // + filter + map
         generator
                 .generate(10)
                 .stream()
-                .map();
+                .map(human -> {
+                    String [] parts = human.getName().split(" ");
+                    String newName = parts[0].toUpperCase()+" "+parts[1].toLowerCase();
+                    return new Human(newName, human.getSalary());
+                })
+                .map(human -> new Human(human.getName(), human.getSalary() * 2))
+                .map(human -> human.getName() +": "+ human.getSalary() * 2)
+                .filter(it -> it.toLowerCase().contains("a"))
+                .filter(it -> it.charAt(it.length() - 1) == '2')
+                .peek(System.out::println)
+                .toList();
     }
 }
