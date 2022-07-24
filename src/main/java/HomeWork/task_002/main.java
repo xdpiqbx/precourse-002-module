@@ -15,6 +15,5 @@ public class main {
             .toList();
 
         System.out.println(sorted);
-
     }
 }
