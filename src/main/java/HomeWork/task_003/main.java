@@ -10,7 +10,8 @@ public class main {
 
         List <Integer> nums = Arrays.stream(rawArr)
                 .flatMap(element -> Arrays.stream(element.split(", ")))
-                .map(Integer::parseInt)
+                .mapToInt(Integer::parseInt)
+                .boxed()
                 .sorted(Comparator.naturalOrder())
                 .toList();
 
