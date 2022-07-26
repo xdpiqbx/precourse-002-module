@@ -1,6 +1,6 @@
 package LessonByMelnichuk.stream;
 
-import LessonByMelnichuk.lambdaStream.Human;
+import LessonByMelnichuk.lambdaStream.human.Human;
 
 import java.util.stream.Stream;
 

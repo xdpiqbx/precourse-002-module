@@ -1,4 +1,4 @@
-package LessonByMelnichuk.lambdaStream;
+package LessonByMelnichuk.lambdaStream.human;
 
 import java.util.Arrays;
 import java.util.Objects;

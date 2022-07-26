@@ -1,4 +1,4 @@
-package LessonByMelnichuk.lambdaStream;
+package LessonByMelnichuk.lambdaStream.city;
 
 import java.util.Arrays;
 import java.util.HashMap;

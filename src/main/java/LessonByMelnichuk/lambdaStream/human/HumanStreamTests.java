@@ -1,8 +1,4 @@
-package LessonByMelnichuk.lambdaStream;
-
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
+package LessonByMelnichuk.lambdaStream.human;
 
 public class HumanStreamTests {
     public static void main(String[] args) {
