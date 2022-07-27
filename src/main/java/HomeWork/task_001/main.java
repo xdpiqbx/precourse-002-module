@@ -7,8 +7,12 @@ import java.util.stream.Stream;
 public class main {
     public static void main(String[] args) {
         Collection<String> names = Arrays.asList("Will", "Stan", "John", "Bill", "Max", "Alex");
+        System.out.println(oddNumberedNames(names));
+    }
 
+    private static String oddNumberedNames(Collection<String> names){
         AtomicInteger i = new AtomicInteger();
+
         Stream<String> namesStream = names
                 .stream()
                 .map((name) -> {
@@ -18,9 +22,6 @@ public class main {
                 .filter(name -> Integer.parseInt(name.substring(0, 1)) % 2 != 0);
 
         String listToString = namesStream.toList().toString();
-
-        listToString = listToString.substring(1, listToString.length() - 1); // убрал из строки [ ]
-
-        System.out.println(listToString);
+        return listToString.substring(1, listToString.length() - 1); // убрал из строки [ ];
     }
 }

@@ -9,7 +9,6 @@ public class CongruentGenerator {
 
     // x[0] = seed
     // x[n + 1] = 1 (a x[n] + c) % m
-
     public long next(long c, long m, long seed){
         return (a * seed + c) % m;
     }

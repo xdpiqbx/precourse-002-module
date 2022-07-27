@@ -1,7 +1,6 @@
 package HomeWork.task_005;
 
 import java.util.Iterator;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class main {
@@ -11,7 +10,7 @@ public class main {
 
         Stream<String> result = zip(streamA, streamB);
 
-        result.peek(System.out::println).collect(Collectors.toList());
+        result.peek(System.out::println).toList();
     }
     public static <T> Stream<T> zip(Stream<T> first, Stream<T> second){
         Iterator<T> iteratorA = first.iterator();
