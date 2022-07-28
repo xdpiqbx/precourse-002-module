@@ -106,3 +106,14 @@ public class ThreadWaitTests {
     }
 }
 ```
+
+### Volatile
+
+- volatile keyword guarantees visibility of changes to variable across threads
+
+```java
+public class PausableThread extends Thread {
+    private volatile boolean running = true;
+//.....
+}
+```
