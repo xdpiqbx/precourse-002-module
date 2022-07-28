@@ -16,8 +16,9 @@ public class main {
         Stream<String> namesStream = names
                 .stream()
                 .map((name) -> {
+                    String numberedName = i + ". " + name;
                     i.getAndIncrement();
-                    return i + ". " + name;
+                    return numberedName;
                 })
                 .filter(name -> Integer.parseInt(name.substring(0, 1)) % 2 != 0);
 
