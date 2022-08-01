@@ -3,22 +3,15 @@ package ua.goit.LessonByMelnichuk;
 import java.util.ArrayList;
 import java.util.List;
 
-// Потоки пытаются изменить одну и ту же переменную counter!
-public class SynchronizeThreadTests {
+public class ImmutableCounterTests {
+    private static volatile ImmutableCounter counter = new ImmutableCounter(0);
 
-    private volatile static int counter = 0;
-
-    // Потоки НЕ синхронизированы и пытаются изменить одну и ту же переменную counter!
-//    public static void increment(){
-//        counter = counter + 1;
-//    }
-
-    // Потоки синхронизированы, изменяют counter по очереди
-    public synchronized static void increment(){
-        counter = counter + 1;
+    public static synchronized void increment(){
+        counter = counter.increment();
     }
 
     public static void main(String[] args) throws InterruptedException {
+
         List<Thread> threads = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {

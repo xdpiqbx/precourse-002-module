@@ -92,6 +92,7 @@ public class ThreadWaitTests {
             while (true){
                 System.out.println("In new thread...");
                 try {
+                    // synchronized block
                     synchronized (Thread.currentThread()){ // <------###
                         Thread.currentThread().wait();
                     }
@@ -107,6 +108,13 @@ public class ThreadWaitTests {
 }
 ```
 
+```java
+// synchronized method
+    public synchronized static void increment(){
+        counter = counter + 1;
+    }
+```
+
 ### Volatile
 
 - volatile keyword guarantees visibility of changes to variable across threads
@@ -116,4 +124,37 @@ public class PausableThread extends Thread {
     private volatile boolean running = true;
 //.....
 }
+```
+
+---
+
+`Thread methods`
+```java
+//thread.run();
+//thread.start();
+//thread.join();
+//thread.interrupt();
+//thread.notify();
+//thread.notifyAll();
+//thread.wait();
+
+//thread.getId();
+//thread.getName();
+//thread.getPriority();
+//thread.getClass();
+//thread.getState();
+//thread.getThreadGroup();
+//thread.getContextClassLoader();
+//thread.getStackTrace();
+//thread.getUncaughtExceptionHandler();
+
+//thread.isAlive();
+//thread.isDaemon();
+//thread.isInterrupted();
+
+//thread.setPriority();
+//thread.setContextClassLoader();
+//thread.setDaemon();
+//thread.setName();
+//thread.setUncaughtExceptionHandler();
 ```
