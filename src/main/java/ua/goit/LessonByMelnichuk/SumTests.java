@@ -5,11 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-
-// https://youtu.be/LeRfh6r8M2g?t=7756
 public class SumTests {
     public static void main(String[] args) throws InterruptedException {
-        long strt = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
         long[][] startFinish = {
             {0L, 100000000L},
             {100000001L, 200000000L},
@@ -48,7 +46,7 @@ public class SumTests {
             finalResult = finalResult.add(subSum);
         }
 
-        long duration = System.currentTimeMillis() - strt;
+        long duration = System.currentTimeMillis() - startTime;
 
         System.out.println("duration = " + duration);
         System.out.println("finalResult = " + finalResult);
@@ -66,16 +64,13 @@ public class SumTests {
         }
         @Override
         public void run() {
-            BigDecimal tmpSum = start;
-
-            while(true){
-                start = start.add(BigDecimal.ONE);
-                if(start.equals(end)){
-                    break;
-                }
-                tmpSum = tmpSum.add(start);
+            long tmpSum = start.longValue();
+            long startLong = start.longValue();
+            long endLong = end.longValue();
+            for (long i = startLong; i < endLong; i++) {
+                tmpSum += i;
             }
-            result.add(tmpSum);
+            result.add(BigDecimal.valueOf(tmpSum));
         }
     }
 }
@@ -91,6 +86,5 @@ public class SumTests {
 //        System.out.println("duration = " + duration); // 5339 ms
 //        System.out.println("sum = " + sum); // 499999999500000000
 //                                               499999999500000009
-//                                               499999995000000000
 //    }
 //}
