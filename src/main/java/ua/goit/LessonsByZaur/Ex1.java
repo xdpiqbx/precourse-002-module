@@ -8,7 +8,7 @@ public class Ex1 {
         }
         System.out.println("Bye=)");
 
-        System.out.println("Thread.currentThread().getName() = " + Thread.currentThread().getName());
+        System.out.println("Thread.currentThread().getName() = " + Thread.currentThread().getName()); // main
     }
 }
 

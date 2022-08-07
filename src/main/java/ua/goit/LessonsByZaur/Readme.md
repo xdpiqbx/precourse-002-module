@@ -1,0 +1,1 @@
+[Как передать параметр потоку](https://askdev.ru/q/kak-peredat-parametr-potoku-java-6188/)
