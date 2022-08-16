@@ -34,7 +34,7 @@ public class Ex18_lock_reentran_lock_Call {
 }
 
 class Call{
-    private Lock lock = new ReentrantLock();
+    private final Lock lock = new ReentrantLock();
     void mobileCall(){
         lock.lock();
         try {
