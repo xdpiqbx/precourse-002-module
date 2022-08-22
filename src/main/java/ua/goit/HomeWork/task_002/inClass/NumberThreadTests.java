@@ -35,7 +35,7 @@ public class NumberThreadTests {
         ProcessThread number = new ProcessThread(new NumberProcessor() {
             @Override
             public void process(int n) {
-                if (n % 3 != 0 && n % 5 != 0) {
+                if (n % 3 != 0 && n % 5 != 0 && n % 15 != 0) {
                     System.out.println(n);
                 }
             }
