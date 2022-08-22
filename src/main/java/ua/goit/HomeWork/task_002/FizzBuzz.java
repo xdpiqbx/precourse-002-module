@@ -1,4 +1,4 @@
-package ua.goit.HomeWork.task_002.myVersion;
+package ua.goit.HomeWork.task_002;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.IntConsumer;

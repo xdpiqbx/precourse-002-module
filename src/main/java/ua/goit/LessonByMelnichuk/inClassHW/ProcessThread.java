@@ -1,4 +1,4 @@
-package ua.goit.HomeWork.task_002.inClass;
+package ua.goit.LessonByMelnichuk.inClassHW;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
