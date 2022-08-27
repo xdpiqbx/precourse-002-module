@@ -21,7 +21,8 @@ public class App {
 //            getUserById(4); // Task 1.5
 //            getUserByUserName("Antonette"); // Task 1.6
 
-            lastCommentToUserPost(4);
+            lastCommentToUserPost(4); // Task 2
+
         } catch (IOException e) {
             e.printStackTrace();
         }
