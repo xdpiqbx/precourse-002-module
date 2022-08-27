@@ -10,6 +10,17 @@ public class UserModel {
     private final String website;
     private final Company company;
 
+    public UserModel() {
+        this.id = 1;
+        this.name = "Bill";
+        this.username = "BigBossBilly";
+        this.email = "bos.billy@mail.com";
+        this.address = new Address();
+        this.phone = "987-2134-23-23";
+        this.website = "bill.com";
+        this.company = new Company();
+    }
+
     public UserModel(int id, String name, String username, String email, Address address, String phone, String website, Company company) {
         this.id = id;
         this.name = name;
@@ -42,6 +53,14 @@ public class UserModel {
         private final String zipcode;
         private final Geo geo;
 
+        public Address() {
+            this.street = "Edgar st.";
+            this.suite = "Apt. 5";
+            this.city = "San Antonio";
+            this.zipcode = "78201-66";
+            this.geo = new Geo();
+        }
+
         public Address(String street, String suite, String city, String zipcode, Geo geo) {
             this.street = street;
             this.suite = suite;
@@ -65,6 +84,10 @@ public class UserModel {
             private final String lat;
             private final String lng;
 
+            public Geo() {
+                this.lat = "-37.3159";
+                this.lng = "81.1496";
+            }
             public Geo(String lat, String lng) {
                 this.lat = lat;
                 this.lng = lng;
@@ -84,6 +107,11 @@ public class UserModel {
         private final String catchPhrase;
         private final String bs;
 
+        public Company() {
+            this.name = "TopGun";
+            this.catchPhrase = "Multi-layered client-server neural-net";
+            this.bs = "harness real-time e-markets";
+        }
         public Company(String name, String catchPhrase, String bs) {
             this.name = name;
             this.catchPhrase = catchPhrase;
