@@ -3,6 +3,8 @@ package ua.goit.HomeWork;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import ua.goit.HomeWork.models.CommentModel;
+import ua.goit.HomeWork.models.PostModel;
 import ua.goit.HomeWork.models.UserModel;
 
 import java.io.*;
@@ -17,7 +19,9 @@ public class App {
 //            deleteObj(); // Task 1.3
 //            getDataAllUsers(); // Task 1.4
 //            getUserById(4); // Task 1.5
-            getUserByUserName("Antonette"); // Task 1.6
+//            getUserByUserName("Antonette"); // Task 1.6
+
+            lastCommentToUserPost(4);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -110,6 +114,39 @@ public class App {
         List <UserModel> userResponse = gson.fromJson(fetch.getResponseData(), listType);
         for (UserModel userModel : userResponse) {
             System.out.println(gson.toJson(userModel));
+        }
+    }
+
+    // Задание 2
+    // Дополните программу методом, который будет выводить
+    // все комментарии к последнему посту определенного пользователя и записывать их в файл.
+
+    public static void lastCommentToUserPost(int userId) throws IOException {
+        // Get posts
+        Fetch fetchUserPosts = new Fetch("/users/"+userId+"/posts", Fetch.METHOD.GET);
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        System.out.println("HTTP status code = " + fetchUserPosts.responseStatusCode());
+        Type listTypePosts = new TypeToken<List<PostModel>>(){}.getType();
+        List <PostModel> postsResponse = gson.fromJson(fetchUserPosts.getResponseData(), listTypePosts);
+        int lastPostId = postsResponse.get(postsResponse.size() - 1).getId();
+
+        // Get comments
+        Fetch fetchComments = new Fetch("/posts/"+lastPostId+"/comments", Fetch.METHOD.GET);
+        Type listTypeComments = new TypeToken<List<CommentModel>>(){}.getType();
+        // prettyfy JSON
+        Object o = gson.fromJson(fetchComments.getResponseData(), listTypeComments);
+        String s = gson.toJson(o, listTypeComments);
+
+        // write json to file
+        String sep = File.separator;
+        String path = "."+sep+"src"+sep+"main"+sep+"java"+sep+"ua"+sep+"goit"+sep+"HomeWork"+sep+"jsonFiles"+sep;
+        File file = new File(path);
+        file.mkdir();
+        String fileName = "user-"+userId+"-post-"+lastPostId+"-comments.json";
+        try (PrintWriter out = new PrintWriter(file.getPath()+sep+fileName)) {
+            out.println(s);
         }
     }
 }

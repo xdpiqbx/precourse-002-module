@@ -1,7 +1,5 @@
 package ua.goit.HomeWork;
 
-import ua.goit.HomeWork.models.UserModel;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,12 +11,12 @@ import java.nio.charset.StandardCharsets;
 public class Fetch {
     private HttpURLConnection connect;
 
-    public Fetch(String uri, METHOD method) throws IOException {
+    public Fetch(String query, METHOD method) throws IOException {
         String baseUrl = "https://jsonplaceholder.typicode.com";
-        URL url = new URL(baseUrl + uri);
+        URL url = new URL(baseUrl + query);
         connect = (HttpURLConnection) url.openConnection();
         connect.setRequestMethod(String.valueOf(method));
-        connect.setConnectTimeout(4000);
+        connect.setConnectTimeout(40000);
         connect.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
         connect.setRequestProperty("Accept", "application/json; charset=UTF-8");
         connect.setDoOutput(true);

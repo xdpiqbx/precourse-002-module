@@ -13,6 +13,10 @@ public class PostModel {
         this.body = body;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "PostModel{" +
