@@ -5,11 +5,13 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import ua.goit.HomeWork.models.CommentModel;
 import ua.goit.HomeWork.models.PostModel;
+import ua.goit.HomeWork.models.TodoModel;
 import ua.goit.HomeWork.models.UserModel;
 
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class App {
     public static void main(String[] args) {
@@ -21,7 +23,9 @@ public class App {
 //            getUserById(4); // Task 1.5
 //            getUserByUserName("Antonette"); // Task 1.6
 
-            lastCommentToUserPost(4); // Task 2
+//            allCommentsToUserLastPost(4); // Task 2
+
+            allUserOpenedTasks(8); // Task 3
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -121,8 +125,7 @@ public class App {
     // Задание 2
     // Дополните программу методом, который будет выводить
     // все комментарии к последнему посту определенного пользователя и записывать их в файл.
-
-    public static void lastCommentToUserPost(int userId) throws IOException {
+    public static void allCommentsToUserLastPost(int userId) throws IOException {
         // Get posts
         Fetch fetchUserPosts = new Fetch("/users/"+userId+"/posts", Fetch.METHOD.GET);
 
@@ -149,6 +152,27 @@ public class App {
         try (PrintWriter out = new PrintWriter(file.getPath()+sep+fileName)) {
             out.println(s);
         }
+    }
+
+    // Задание 3
+    // Дополните программу методом, который будет выводить все открытые задачи для пользователя Х.
+    // https://jsonplaceholder.typicode.com/users/1/todos.
+    // Открытыми считаются все задачи, у которых completed = false.
+
+    public static void allUserOpenedTasks(int userId) throws IOException {
+        Fetch fetchUserTodos = new Fetch("/users/"+userId+"/todos", Fetch.METHOD.GET);
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        System.out.println("HTTP status code = " + fetchUserTodos.responseStatusCode());
+        Type listTypeTodos = new TypeToken<List<TodoModel>>(){}.getType();
+
+        List<TodoModel> todos = gson.fromJson(fetchUserTodos.getResponseData(), listTypeTodos);
+        List<TodoModel> notCompletedTodos = todos.stream()
+                .filter(it -> !it.isCompleted()).toList();
+
+        String prettyJson = gson.toJson(notCompletedTodos, listTypeTodos);
+        System.out.println(prettyJson);
     }
 }
 
